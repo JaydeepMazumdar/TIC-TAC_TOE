@@ -1,0 +1,235 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trispace", sans-serif;
+  cursor: default;
+}
+
+.contentBox {
+  width: 100%;
+  height: 100%;
+}
+
+.gameOption {
+  display: none;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 41, 63, 0.9)),
+    url("../image/bg.jpg") no-repeat top center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gameOption.show {
+  display: flex;
+  visibility: visible;
+}
+
+#pvc,
+#pvp {
+  width: 15rem;
+  height: 3rem;
+  cursor: pointer;
+  margin: 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  color: black;
+  font-weight: 750;
+  box-shadow: 0px 0px 14px 5px rgba(136, 134, 134, 0.75);
+  position: relative;
+  cursor: pointer;
+}
+
+#pvc::after,
+#pvp::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  transition: top, right, bottom, left, 0.3s ease;
+}
+
+#pvc::before,
+#pvp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  transition: top, right, bottom, left, 0.3s ease;
+}
+
+#pvc:hover::before,
+#pvp:hover::before {
+  background-color: white;
+  top: -4px;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  border-radius: 5px;
+}
+#pvc:hover::after,
+#pvp:hover::after {
+  background-color: rgba(0, 0, 0, 0.9);
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  border-radius: 5px;
+}
+
+h1 {
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  margin: 15px 0;
+  color: gold;
+  text-shadow: 3.5px 3.5px 10px rgb(43, 42, 42);
+  font-size: 4.5rem;
+  font-family: "Rubik Moonrocks", cursive;
+}
+
+body {
+  background: #ff00ff;
+}
+
+.container {
+  position: relative;
+  width: 95vw;
+  height: 70vh;
+  margin: auto;
+  color: darkblue;
+  margin-top: 1rem;
+  background: linear-gradient(rgba(156, 86, 86, 0.9), rgba(138, 89, 89, 0.9)),
+    url("../image/bg.jpg") no-repeat top center/cover;
+  border-radius: 30px;
+  border: 10px solid rgb(97, 46, 51);
+  overflow-y: scroll;
+}
+
+h2 {
+  position: fixed;
+  top: 13%;
+  margin: 1rem 33%;
+  font-size: 1.5rem;
+  font-family: "Titan One", cursive;
+  text-shadow: 3.5px 3.5px 2px rgb(22, 22, 22);
+  font-size: 3rem;
+  color: orange;
+  border-radius: 20px;
+  border: 10px solid rgb(97, 46, 51);
+  background: darkolivegreen;
+  width: 22rem;
+  text-align: center;
+  padding: 10px;
+  z-index: 2;
+}
+
+.ScoreBoard {
+  position: absolute;
+  top: 18%;
+  left: 2.5%;
+  width: 95%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+#NewGame {
+  width: 19%;
+  height: 10%;
+  margin-left: 39%;
+  margin-top: 0.7rem;
+  padding: 0.7rem 0;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 5px rgba(150, 150, 150, 1);
+  border-radius: 10px;
+  border: none;
+  transition: all 0.5s ease;
+}
+
+#NewGame:hover {
+  background: darkblue;
+  color: azure;
+  text-shadow: none;
+  transform: scale(0.95);
+}
+
+thead {
+  font-size: 1.2rem;
+  background: black;
+  color: white;
+  padding: 5px;
+}
+
+thead tr th:nth-child(1) {
+  width: 8%;
+  padding: 5px;
+}
+thead tr th:nth-child(2) {
+  width: 80%;
+  padding: 5px;
+  border-left: 1px solid lightpink;
+  border-right: 1px solid lightpink;
+}
+thead tr th:nth-child(3) {
+  width: 12%;
+  padding: 5px;
+}
+
+tr {
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+tr td {
+  padding: 5px;
+  font-size: 1.1rem;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    position: absolute;
+    margin: 0;
+    top: -1rem;
+    margin-left: 12%;
+    width: 75%;
+    font-size: 2rem;
+  }
+
+  #NewGame {
+    font-size: 1.1rem;
+    width: 45%;
+    margin: 10% 30%;
+  }
+
+  .ScoreBoard{
+    top: 16%;
+  }
+}

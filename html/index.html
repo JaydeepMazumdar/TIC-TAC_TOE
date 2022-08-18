@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../js/ScoreBoard.js" defer></script>
+    <title>TIC-TAC-TOE</title>
+  </head>
+  <body>
+    <div class="contentBox">
+    <h1>TIC-TAC-TOE</h1>
+      <div class="container">
+        <h2 id="heading">Scoreboard</h2>
+        <table class="ScoreBoard">
+          <thead>
+            <tr>
+              <th>Sl.No.</th>
+              <th>Match</th>
+              <th>Winner</th>
+            </tr>
+          </thead>
+          <tbody class="ScoreDisplay"></tbody>
+        </table>
+      </div>
+      <button id="NewGame" onclick="{show()}">Start New Game</button>
+
+      <div class="gameOption" id="gameOption">
+        <button id="pvc">Play with Computer</button>
+        <button id="pvp">Play with Friend</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const choice1 = document.getElementById("pvp");
+    const choice2 = document.getElementById("pvc");
+    const chooseElement = document.getElementById("gameOption");
+    const hideElement = document.getElementById("heading");
+    choice1.addEventListener("click", human);
+    choice2.addEventListener("click", computer);
+
+    function human(e) {
+      location.replace("./pvp.html");
+    }
+
+    function computer(e) {
+      location.replace("./pvc.html");
+    }
+
+    function show() {
+      chooseElement.classList.add("show");
+      hideElement.style.display = "none";
+    }
+  </script>
+</html>
